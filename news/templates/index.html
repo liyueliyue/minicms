@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% extends 'base.html' %}
+    <title>{% block title %}
+                首页
+            {% endblock title %}
+    </title>
+</head>
+<body>
+    {% block content %}
+     <ul>
+        {% for column in columns %}
+            <li>
+                <a href={{ column.get_absolute_url }}>{{ column.name }}</a>
+            </li>
+        {% endfor %}
+     </ul>
+    {% endblock content %}
+</body>
+</html>
